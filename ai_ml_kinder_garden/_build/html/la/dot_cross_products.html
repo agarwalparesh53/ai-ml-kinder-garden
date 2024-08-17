@@ -57,9 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'la/dot_cross_products';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vector Spaces" href="vectorspaces.html" />
     <link rel="prev" title="Subspaces" href="subspaces.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,6 +192,7 @@
 
 <li class="toctree-l2"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Vector Products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vectorspaces.html">Vector Spaces</a></li>
 </ul>
 </details></li>
 </ul>
@@ -386,8 +390,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot Product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-calculate-dot-product">How to calculate dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-schwarz-inequality">Cauchy-Schwarz Inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-between-vectors">Angle between vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Angle between vectors</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -399,22 +411,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="vector-products">
+  <section id="vector-products">
 <h1>Vector Products<a class="headerlink" href="#vector-products" title="Link to this heading">#</a></h1>
 <section id="dot-product">
 <h2>Dot Product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\hat{a}.\hat{b}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This tells how much do these point in same direction.</p>
+</div>
+</div>
+</div>
+<section id="how-to-calculate-dot-product">
+<h3>How to calculate dot product<a class="headerlink" href="#how-to-calculate-dot-product" title="Link to this heading">#</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(a = \begin{bmatrix} a_1 &amp; a_2 &amp; a_3 \end{bmatrix}\)</span>
+<span class="math notranslate nohighlight">\(b = \begin{bmatrix} b_1 &amp; b_2 &amp; b_3 \end{bmatrix}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\hat{a}.\hat{b} = a_1b_1 + a_2b_2 + a_3b_3\)</span></p>
+</div>
+</div>
+</section>
+<section id="cauchy-schwarz-inequality">
+<h3>Cauchy-Schwarz Inequality<a class="headerlink" href="#cauchy-schwarz-inequality" title="Link to this heading">#</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(|\hat{a}.\hat{b}| \: \le ||a||b||\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Equality holds when <code class="docutils literal notranslate"><span class="pre">a</span></code> is a scalar multiple of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="angle-between-vectors">
+<h3>Angle between vectors<a class="headerlink" href="#angle-between-vectors" title="Link to this heading">#</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\hat{a}.\hat{b} = \|a\| \|b\|\cos\theta\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">When dot product is 0, the vectors are orthogonal vectors.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="cross-product">
 <h2>Cross Product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\hat{a} \mathbb{X} \hat{b}\)</span> - <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">which</span> <span class="pre">is</span> <span class="pre">orthogonal</span> <span class="pre">to</span> <span class="pre">both</span> <span class="pre">a</span> <span class="pre">and</span> <span class="pre">b</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This tells how much do these point in opposite direction.</p>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Angle between vectors<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\hat{a} \mathbb{X} \hat{b} = \|a\| \|b\|\sin\theta\)</span></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/7380e18373d7f39ae7387d2e5d68e2ef0cc2525117b42c4016ed1b0a3fe349d0.png" src="../_images/7380e18373d7f39ae7387d2e5d68e2ef0cc2525117b42c4016ed1b0a3fe349d0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -457,6 +521,15 @@ document.write(`
         <p class="prev-next-title">Subspaces</p>
       </div>
     </a>
+    <a class="right-next"
+       href="vectorspaces.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vector Spaces</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -473,8 +546,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot Product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-calculate-dot-product">How to calculate dot product</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-schwarz-inequality">Cauchy-Schwarz Inequality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-between-vectors">Angle between vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Angle between vectors</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -192,6 +192,7 @@
 
 <li class="toctree-l2"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dot_cross_products.html">Vector Products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vectorspaces.html">Vector Spaces</a></li>
 </ul>
 </details></li>
 </ul>
@@ -424,15 +425,19 @@ document.write(`
 <h3>Norms of a vector<a class="headerlink" href="#norms-of-a-vector" title="Link to this heading">#</a></h3>
 <p>Norms represent a magnitude of a vector. Norm can be calculated in multiple ways / formats.
 Some of the common ones are:</p>
-<p><code class="docutils literal notranslate"><span class="pre">L1</span> <span class="pre">Norm</span></code>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">L1</span> <span class="pre">Norm</span></code>
 Also known as Manhattan distance. <span class="math notranslate nohighlight">\(||\bar{X}||_1 = |X_1| + |X_2| + |X_3| ... + |X_n|\)</span></p>
-<p><code class="docutils literal notranslate"><span class="pre">L2</span> <span class="pre">Norm</span></code>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">L2</span> <span class="pre">Norm</span></code>
 <span class="math notranslate nohighlight">\(||\bar{X}||_2 = \sqrt{X_1^2 + X_2^2 + X_3^2 ... + X_n^2}\)</span></p>
-<p><code class="docutils literal notranslate"><span class="pre">Infinity</span> <span class="pre">Norm</span></code>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Infinity</span> <span class="pre">Norm</span></code>
 <span class="math notranslate nohighlight">\(||\bar{X}||_\infty = max(|X_1| , |X_2| , |X_3| ... , |X_n|)\)</span></p>
-<p><code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">Vectors</span></code></p>
-<p>unit vectors are often represented by <code class="docutils literal notranslate"><span class="pre">e</span></code> which is equivalent to <span class="math notranslate nohighlight">\(\frac{\bar{X}}{\sqrt{\sum_{i=1}^N X_i^2}}\)</span>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">Vectors</span></code></p>
+<p class="sd-card-text">unit vectors are often represented by <code class="docutils literal notranslate"><span class="pre">e</span></code> which is equivalent to <span class="math notranslate nohighlight">\(\frac{\bar{X}}{\sqrt{\sum_{i=1}^N X_i^2}}\)</span>
 This basically means a vector with magnitude 1 and direction.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="vector-transformations">
@@ -450,18 +455,22 @@ This basically means a vector with magnitude 1 and direction.</p>
 </section>
 <section id="basis-span-orthogonal-and-orthonormal-vectors">
 <h2>Basis, Span, Orthogonal and Orthonormal Vectors<a class="headerlink" href="#basis-span-orthogonal-and-orthonormal-vectors" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Span</span></code></p>
-<p>A span is a set of all vectors which can be represented as a linear combination of a set.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Basis</span></code></p>
-<p>Basis represents a set of N length vectors which can represent any vector in N dimension space.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Orthogonal</span> <span class="pre">vectors</span></code></p>
-<p>Vectors X, Y are orthogonal if <span class="math notranslate nohighlight">\(X^TY = 0\)</span></p>
-<p>A N dim space has atmost N orthogonal basis vectors.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Orthonormal</span> <span class="pre">vectors</span></code></p>
-<p>Orthogonal vectors which have unit norm.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Span</span></code></p>
+<p class="sd-card-text">A span is a set of all vectors which can be represented as a linear combination of a set.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Basis</span></code></p>
+<p class="sd-card-text">Basis represents a set of N length vectors which can represent any vector in N dimension space.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Orthogonal</span> <span class="pre">vectors</span></code></p>
+<p class="sd-card-text">Vectors X, Y are orthogonal if <span class="math notranslate nohighlight">\(X^TY = 0\)</span></p>
+<p class="sd-card-text">A N dim space has atmost N orthogonal basis vectors.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Orthonormal</span> <span class="pre">vectors</span></code></p>
+<p class="sd-card-text">Orthogonal vectors which have unit norm.</p>
+</div>
+</div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/66332a428202c67dc4fc7528604b4d1479f8e8011f44b58702ac0740105e0365.png" src="../_images/66332a428202c67dc4fc7528604b4d1479f8e8011f44b58702ac0740105e0365.png" />
+<img alt="../_images/e77fc3fcd455ef48810fd45fb60430fa671809eb5730947029dba50dd88fa092.png" src="../_images/e77fc3fcd455ef48810fd45fb60430fa671809eb5730947029dba50dd88fa092.png" />
 </div>
 </div>
 </section>
