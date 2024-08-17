@@ -188,7 +188,6 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Introduction To Linear Algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basics.html">System Of Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vectors.html">Vectors</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dot_cross_products.html">Vector Products</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Vector Spaces</a></li>
@@ -389,7 +388,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space">Null Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space-n-a">Null Space N(A)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-space-c-a">Column Space C(A)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-of-a-vector-space">Dimension of a Vector Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullity-and-rank">Nullity And Rank</a></li>
 </ul>
             </nav>
         </div>
@@ -403,8 +405,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vector-spaces">
 <h1>Vector Spaces<a class="headerlink" href="#vector-spaces" title="Link to this heading">#</a></h1>
-<section id="null-space">
-<h2>Null Space<a class="headerlink" href="#null-space" title="Link to this heading">#</a></h2>
+<section id="null-space-n-a">
+<h2>Null Space N(A)<a class="headerlink" href="#null-space-n-a" title="Link to this heading">#</a></h2>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(A \hat{X} = \hat0\)</span></p>
@@ -443,6 +445,75 @@ Example</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">N(K) = SPAN(<span class="math notranslate nohighlight">\(\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 0 \\ 1 \end{bmatrix}\)</span>)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="column-space-c-a">
+<h2>Column Space C(A)<a class="headerlink" href="#column-space-c-a" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(A \hat{X} = \hat{b}\)</span></p>
+<p class="sd-card-text">A vector <code class="docutils literal notranslate"><span class="pre">b</span></code> is said to be in <code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">Space</span></code> of <code class="docutils literal notranslate"><span class="pre">A</span></code> if it satisfies the above equation,
+i.e it can be expressed as a linear combination of <code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">Vectors</span></code> of <code class="docutils literal notranslate"><span class="pre">A</span></code></p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If N(A) = <span class="math notranslate nohighlight">\(\hat 0\)</span> columns of A are <code class="docutils literal notranslate"><span class="pre">Linearly</span> <span class="pre">Independent</span></code> -&gt; Columns form a <code class="docutils literal notranslate"><span class="pre">Basis</span></code> for C(A)</p></li>
+<li><p>If N(A) = <span class="math notranslate nohighlight">\(\hat 0, \hat{v}\)</span> columns of A are <code class="docutils literal notranslate"><span class="pre">Linearly</span> <span class="pre">Dependent</span></code> -&gt; Do not form a <code class="docutils literal notranslate"><span class="pre">Basis</span></code> for C(A)</p></li>
+</ul>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Example</div>
+<div class="docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}K = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}\end{split}\]</div>
+<p class="sd-card-text"><strong>Find column space of matrix K</strong></p>
+</div>
+<div class="docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">By</span> <span class="pre">Applying</span> <span class="pre">some</span> <span class="pre">row</span> <span class="pre">operations</span> <span class="pre">we</span> <span class="pre">can</span> <span class="pre">reduce</span> <span class="pre">K</span> <span class="pre">to</span> <span class="pre">below</span></code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}K = \begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[x_1 + 2x_2 = 0\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">N(K) = SPAN(<span class="math notranslate nohighlight">\(\begin{bmatrix} -2 \\ 1 \end{bmatrix}\)</span>)</p>
+<p class="sd-card-text">This confirms that columns of K are linearly dependent.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="dimension-of-a-vector-space">
+<h2>Dimension of a Vector Space<a class="headerlink" href="#dimension-of-a-vector-space" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Number of basis vectors in the space.</p>
+</div>
+</div>
+</section>
+<section id="nullity-and-rank">
+<h2>Nullity And Rank<a class="headerlink" href="#nullity-and-rank" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Nullity</span></code>
+Dimension of Null Space of A.</p>
+<p class="sd-card-text">i.e. The number of free columns, which do not have pivot in reduced form.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Rank</span></code>
+Number of column vectors in column space of A.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Example</div>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 8 \\ 0 &amp; 1 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; 2 \end{bmatrix}\)</span></p>
+<p class="sd-card-text">Nullity(A) = 1</p>
+<p class="sd-card-text">Rank(A) = 3</p>
+</div>
 </div>
 </div>
 </div>
@@ -504,7 +575,10 @@ Example</div>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space">Null Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space-n-a">Null Space N(A)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-space-c-a">Column Space C(A)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-of-a-vector-space">Dimension of a Vector Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullity-and-rank">Nullity And Rank</a></li>
 </ul>
   </nav></div>
 
