@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -192,6 +192,7 @@
 
 <li class="toctree-l2"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dot_cross_products.html">Vector Products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vectorspaces.html">Vector Spaces</a></li>
 </ul>
 </details></li>
 </ul>
@@ -409,16 +410,23 @@ document.write(`
 <p>When we try to solve <code class="docutils literal notranslate"><span class="pre">M</span></code> equations in <code class="docutils literal notranslate"><span class="pre">N</span></code> unknowns , we call them a system of equations.</p>
 <section id="plain-algebra-representation">
 <h2>Plain Algebra Representation<a class="headerlink" href="#plain-algebra-representation" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(a_{1}x_{11} + a_{1}x_{12} ... + a_{N}x_{1N} = y_1\)</span></p>
-<p><span class="math notranslate nohighlight">\(a_{1}x_{21} + ... + a_{N}x_{2N} = y_2\)</span></p>
-<p>…</p>
-<p>…</p>
-<p>…</p>
-<p><span class="math notranslate nohighlight">\(a_{1}x_{21} + ... + a_{N}x_{2N} = y_M\)</span></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(a_{1}x_{11} + a_{1}x_{12} ... + a_{N}x_{1N} = y_1\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(a_{1}x_{21} + ... + a_{N}x_{2N} = y_2\)</span></p>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(a_{1}x_{21} + ... + a_{N}x_{2N} = y_M\)</span></p>
+</div>
+</div>
 </section>
 <section id="matrix-algebra-representation">
 <h2>Matrix Algebra Representation<a class="headerlink" href="#matrix-algebra-representation" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>It will be tedious to record and represent the system of equations in plain algebra, as M, N continue to become large.</p>
+</div>
 <p>Hence we can represent the same as following</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{bmatrix} a_0 &amp; a_2 &amp; ... &amp; a_n\end{bmatrix}\begin{bmatrix} x_{11} &amp; x_{21} &amp; ... &amp; x_{n1}  \\ ... &amp; ... &amp; ... &amp; ... \\ x_{1n} &amp; x_{2n} &amp; ... &amp; x_{mn}\end{bmatrix}  = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_m\end{bmatrix}\end{split}\]</div>

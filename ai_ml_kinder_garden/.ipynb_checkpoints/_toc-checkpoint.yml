@@ -15,7 +15,7 @@ parts:
       - file: la/vectors
       - file: la/subspaces
       - file: la/dot_cross_products
-      - file: la/spaces
+      - file: la/vectorspaces
       - file: la/transformations
       - file: la/inverses
       - file: la/determinants

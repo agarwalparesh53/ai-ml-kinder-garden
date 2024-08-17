@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/paagarwal/Documents/OMSA/.venv/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+vector_original = np.random.randint(1, 4, 2)
+original_basis = np.array([[0, 1], [1, 0]])
+new_basis = np.random.randint(-2, 1, (2, 2))
+vector_new = np.linalg.inv(new_basis) @ vector_original
+
+plt.figure(figsize=(8, 8))
+
+plt.quiver(0, 0, original_basis[0, 0], original_basis[1, 0], angles='xy', scale_units='xy', scale=1, color='r', label='Original Basis')
+plt.quiver(0, 0, original_basis[0, 1], original_basis[1, 1], angles='xy', scale_units='xy', scale=1, color='r')
+
+plt.quiver(0, 0, new_basis[0, 0], new_basis[1, 0], angles='xy', scale_units='xy', scale=1, color='b', label='New Basis')
+plt.quiver(0, 0, new_basis[0, 1], new_basis[1, 1], angles='xy', scale_units='xy', scale=1, color='b')
+
+plt.quiver(0, 0, vector_original[0], vector_original[1], angles='xy', scale_units='xy', scale=1, color='k', label='Original Vector')
+plt.quiver(0, 0, vector_new[0], vector_new[1], angles='xy', scale_units='xy', scale=1, color='y', label='Transformed Vector')
+
+plt.xlim(-4, 4)
+plt.ylim(-4, 4)
+
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.title('Change of Basis')
+plt.legend()
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mLinAlgError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[4], line 4[0m
+[1;32m      2[0m original_basis [38;5;241m=[39m np[38;5;241m.[39marray([[[38;5;241m0[39m, [38;5;241m1[39m], [[38;5;241m1[39m, [38;5;241m0[39m]])
+[1;32m      3[0m new_basis [38;5;241m=[39m np[38;5;241m.[39mrandom[38;5;241m.[39mrandint([38;5;241m-[39m[38;5;241m2[39m, [38;5;241m1[39m, ([38;5;241m2[39m, [38;5;241m2[39m))
+[0;32m----> 4[0m vector_new [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mlinalg[49m[38;5;241;43m.[39;49m[43minv[49m[43m([49m[43mnew_basis[49m[43m)[49m [38;5;241m@[39m vector_original
+[1;32m      6[0m plt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m8[39m, [38;5;241m8[39m))
+[1;32m      8[0m plt[38;5;241m.[39mquiver([38;5;241m0[39m, [38;5;241m0[39m, original_basis[[38;5;241m0[39m, [38;5;241m0[39m], original_basis[[38;5;241m1[39m, [38;5;241m0[39m], angles[38;5;241m=[39m[38;5;124m'[39m[38;5;124mxy[39m[38;5;124m'[39m, scale_units[38;5;241m=[39m[38;5;124m'[39m[38;5;124mxy[39m[38;5;124m'[39m, scale[38;5;241m=[39m[38;5;241m1[39m, color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mOriginal Basis[39m[38;5;124m'[39m)
+
+File [0;32m~/Documents/OMSA/.venv/lib/python3.12/site-packages/numpy/linalg/linalg.py:561[0m, in [0;36minv[0;34m(a)[0m
+[1;32m    559[0m signature [38;5;241m=[39m [38;5;124m'[39m[38;5;124mD->D[39m[38;5;124m'[39m [38;5;28;01mif[39;00m isComplexType(t) [38;5;28;01melse[39;00m [38;5;124m'[39m[38;5;124md->d[39m[38;5;124m'[39m
+[1;32m    560[0m extobj [38;5;241m=[39m get_linalg_error_extobj(_raise_linalgerror_singular)
+[0;32m--> 561[0m ainv [38;5;241m=[39m [43m_umath_linalg[49m[38;5;241;43m.[39;49m[43minv[49m[43m([49m[43ma[49m[43m,[49m[43m [49m[43msignature[49m[38;5;241;43m=[39;49m[43msignature[49m[43m,[49m[43m [49m[43mextobj[49m[38;5;241;43m=[39;49m[43mextobj[49m[43m)[49m
+[1;32m    562[0m [38;5;28;01mreturn[39;00m wrap(ainv[38;5;241m.[39mastype(result_t, copy[38;5;241m=[39m[38;5;28;01mFalse[39;00m))
+
+File [0;32m~/Documents/OMSA/.venv/lib/python3.12/site-packages/numpy/linalg/linalg.py:112[0m, in [0;36m_raise_linalgerror_singular[0;34m(err, flag)[0m
+[1;32m    111[0m [38;5;28;01mdef[39;00m [38;5;21m_raise_linalgerror_singular[39m(err, flag):
+[0;32m--> 112[0m     [38;5;28;01mraise[39;00m LinAlgError([38;5;124m"[39m[38;5;124mSingular matrix[39m[38;5;124m"[39m)
+
+[0;31mLinAlgError[0m: Singular matrix
+
