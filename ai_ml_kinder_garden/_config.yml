@@ -35,7 +35,6 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  analytics:
-    google_analytics_id: G-JWQP3D1HQY
+  google_analytics_id: G-JWQP3D1HQY
 
 only_build_toc_files: true
