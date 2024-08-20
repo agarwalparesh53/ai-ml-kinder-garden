@@ -75,6 +75,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'la/transformations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Inverses" href="inverses.html" />
     <link rel="prev" title="Vector Spaces" href="vectorspaces.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,20 +194,25 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../courses.html">Courses</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Introduction To Linear Algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="basics.html">System Of Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html">Vectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dot_cross_products.html">Vector Products</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectorspaces.html">Vector Spaces</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Transformations</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="intro.html">Introduction To Linear Algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basics.html">System Of Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vectors.html">Vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subspaces.html">Subspaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dot_cross_products.html">Vector Products</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vectorspaces.html">Vector Spaces</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inverses.html">Inverses</a></li>
 </ul>
 </details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cda/prereqs.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cda/intro.html">Introduction to Machine Learning</a></li>
 </ul>
 
     </div>
@@ -403,7 +409,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-transformations">Functions And Transformations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-matrices">Transformation Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-transformation-matrices">Linear Transformation Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compositions-of-linear-transformations">Compositions of linear transformations</a></li>
 </ul>
             </nav>
         </div>
@@ -473,13 +480,29 @@ Example</div>
 </div>
 </div>
 </section>
-<section id="transformation-matrices">
-<h2>Transformation Matrices<a class="headerlink" href="#transformation-matrices" title="Link to this heading">#</a></h2>
+<section id="linear-transformation-matrices">
+<h2>Linear Transformation Matrices<a class="headerlink" href="#linear-transformation-matrices" title="Link to this heading">#</a></h2>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Transformations can be performed using matrices. These transformations result in scaling, rotation of original vectors but they retain the relationship between a set of vectors.</p>
+<p class="sd-card-text">A matrix used for Transforming from <span class="math notranslate nohighlight">\(R^n \implies R^m\)</span></p>
+<p class="sd-card-text">These transformations result in scaling, rotation of original vectors but they retain the relationship between a set of vectors.</p>
 <p class="sd-card-text">Given a <code class="docutils literal notranslate"><span class="pre">T</span></code> transformation Matrix, and an original vector <span class="math notranslate nohighlight">\(\hat{V}\)</span></p>
 <p class="sd-card-text">The transformation is given by <span class="math notranslate nohighlight">\(T\hat{V}\)</span></p>
+</div>
+</div>
+</section>
+<section id="compositions-of-linear-transformations">
+<h2>Compositions of linear transformations<a class="headerlink" href="#compositions-of-linear-transformations" title="Link to this heading">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Sometimes we want to cascade linear transformations of matrices.
+i.e</p>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(T1 : \: R^n\implies R^m\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(T2 : \: R^m\implies R^l\)</span></p></li>
+</ul>
+<p class="sd-card-text">We want to apply the Transformations in the following order on <span class="math notranslate nohighlight">\(\hat{V} : \: T2T1\hat{V} \implies R^l\)</span></p>
+<p class="sd-card-text">We can convert the same into a composition transform, <span class="math notranslate nohighlight">\(T2T1\hat{V} = (T2T1)\hat{V} = T\hat{V} \implies R^l\)</span></p>
 </div>
 </div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
@@ -499,14 +522,15 @@ Mathmatical illustration for a vector</div>
 <p class="sd-card-text">The Transformation will result in scaling 2x length along <code class="docutils literal notranslate"><span class="pre">x</span></code> axis</p>
 <hr class="docutils" />
 <p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Rotation</span> <span class="pre">Transformation</span> <span class="pre">Matrix</span></code> - <span class="math notranslate nohighlight">\(\begin{bmatrix} \cos{\theta} &amp; \sin{\theta} &amp; 0 \\ \cos{\theta} &amp; -\sin{\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \: where \: \theta = 45\)</span> degrees</p>
-<p class="sd-card-text">This will rotate the cube by <span class="math notranslate nohighlight">\(45\)</span> degrees along x and y axis.</p>
+<p class="sd-card-text">This will rotate the cube by <span class="math notranslate nohighlight">\(45\)</span> degrees along x.</p>
 <hr class="docutils" />
-<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Sheared</span> <span class="pre">Transformation</span> <span class="pre">Matrix</span></code> - <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 0 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Composition</span> <span class="pre">Transformation</span> <span class="pre">Matrix</span></code> - <span class="math notranslate nohighlight">\(\begin{bmatrix} 2 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\begin{bmatrix} \cos{\theta} &amp; \sin{\theta} &amp; 0 \\ \cos{\theta} &amp; -\sin{\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} 2\cos{\theta} &amp; -\sin{\theta} &amp; 0 \\ \cos{\theta} &amp; \sin{\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p class="sd-card-text">This will rotate the cube by <span class="math notranslate nohighlight">\(45\)</span> degrees along x as well as scale the x dimension.</p>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/79960f2c5d86443804dbf60049db11f8aea1d4029f4699443f6a5c978e8caaed.png" src="../_images/79960f2c5d86443804dbf60049db11f8aea1d4029f4699443f6a5c978e8caaed.png" />
+<img alt="../_images/06ff85203636e695e7f78a6bdb674fce10ddcc0229fdbd5f4ad8d6fb30f0381f.png" src="../_images/06ff85203636e695e7f78a6bdb674fce10ddcc0229fdbd5f4ad8d6fb30f0381f.png" />
 </div>
 </div>
 </section>
@@ -551,6 +575,15 @@ Mathmatical illustration for a vector</div>
         <p class="prev-next-title">Vector Spaces</p>
       </div>
     </a>
+    <a class="right-next"
+       href="inverses.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Inverses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -568,7 +601,8 @@ Mathmatical illustration for a vector</div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-transformations">Functions And Transformations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-matrices">Transformation Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-transformation-matrices">Linear Transformation Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compositions-of-linear-transformations">Compositions of linear transformations</a></li>
 </ul>
   </nav></div>
 

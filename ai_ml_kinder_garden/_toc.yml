@@ -6,11 +6,11 @@ root: intro
 parts:
   - chapters: 
     - file: courses
-  - caption: Linear Algebra
-    # numbered: true
-    chapters:
+  - caption: Prerequisite Courses      
+    ## Linear Algebra  
+    chapters: 
     - file: la/intro
-      sections:
+      sections:  
       - file: la/basics
       - file: la/vectors
       - file: la/subspaces
@@ -21,4 +21,8 @@ parts:
       - file: la/determinants
       - file: la/transposes
       - file: la/change_of_basis
-      - file: la/eigen
+      - file: la/eigen  
+  - caption: Machine Learning    
+    chapters: 
+      - file: cda/prereqs
+      - file: cda/intro
