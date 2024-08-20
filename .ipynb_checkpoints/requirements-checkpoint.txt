@@ -3,3 +3,4 @@ matplotlib
 numpy
 ghp-import
 matplotlib_venn
+pandas
